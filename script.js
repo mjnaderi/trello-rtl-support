@@ -1,6 +1,6 @@
 /*
  * trello-rtl-support
- * Original code from: https://github.com/ykh/trello-rtl-support
+ * Fork of https://github.com/ykh/trello-rtl-support
  * This script is a solution to trello can detect rtl content and apply correct behaviors
  * Licensed under the GNU GPL v2 license.
  */
@@ -12,12 +12,14 @@
         $(doms).each(function () {
             updateStyle($(this));
         });
+        $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
     });
 
     $(document).ready(function () {
         $(doms).each(function () {
             updateStyle($(this));
         });
+        $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
     });
 
     $('body').on('input blur focus', inputs, function (e) {
@@ -72,5 +74,4 @@
             target.css(ltr);
         }
     }
-    $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
 })($, document);
