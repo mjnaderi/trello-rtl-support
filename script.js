@@ -1,6 +1,6 @@
 /*
  * trello-rtl-support
- * https://github.com/ykh/trello-rtl-support
+ * Original code from: https://github.com/ykh/trello-rtl-support
  * This script is a solution to trello can detect rtl content and apply correct behaviors
  * Licensed under the GNU GPL v2 license.
  */
