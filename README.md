@@ -25,7 +25,7 @@ So if you are a trello fan and working with it and you have some RTL content in 
 <b>Method 1 (Recommended):</b> <br>
 1. Install [cjs chrome extension](https://chrome.google.com/webstore/detail/poakhlngfciodnhlhhgnaaelnpjljija) to run javascript code. (script.js in this case) <br>
 2. Go to [Trello Home Page](https://trello.com) <br>
-3. Add content of [script.js](https://github.com/ykh/trello-auto-dir/blob/master/script.js) to cjs extension <br>
+3. Add content of [script.js](https://github.com/mjnaderi/trello-auto-dir/blob/master/script.js) to cjs extension <br>
 4. And... enjoying Trello more than before :) <br>
 <b>Method 2:</b> <br>
 1. Download and install [TamperMonkey](http://tampermonkey.net/) Extensions <br>
