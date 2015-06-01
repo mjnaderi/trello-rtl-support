@@ -1,10 +1,9 @@
 Trello RTL Support
 ===============
 
-Hi :) <br>
-After a long time that I disappointed of rtl-support feature on [Trello](https://trello.com) I decided to figure a solution out! <br>
+This is a fork of [Trello RTL Support](https://github.com/ykh/trello-rtl-support).
 
-There is some screenshots, so you can see the result :) <br><br>
+Screenshots:
 
 - Cards list: <br>
 ![trello-rtl-1](https://cloud.githubusercontent.com/assets/2290912/5434811/1678ca1c-846b-11e4-807c-8aad75610000.jpg)
@@ -14,7 +13,6 @@ There is some screenshots, so you can see the result :) <br><br>
 - Check list RTL/LTR: <br>
 ![trello-rtl-3](https://cloud.githubusercontent.com/assets/2290912/5426590/7efb018a-8372-11e4-9ace-580f75330ed8.png) <br><br>
 
-So if you are a trello fan and working with it and you have some RTL content in your boards data, I suggest this solution to you. I hope you enjoy it :)<br>
 
 <h2>Languages Support:</h2>
 1- Persian <br>
