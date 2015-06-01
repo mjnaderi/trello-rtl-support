@@ -34,7 +34,8 @@
 
         rtl = {
             'direction': 'rtl',
-            'text-align': 'right'
+            'text-align': 'right',
+            'font-family': 'tahoma'
         };
         ltr = {
             'direction': 'ltr',
@@ -71,4 +72,5 @@
             target.css(ltr);
         }
     }
+    $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
 })($, document);
