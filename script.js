@@ -1,77 +1,36 @@
 /*
  * trello-rtl-support
- * Fork of https://github.com/ykh/trello-rtl-support
- * This script is a solution to trello can detect rtl content and apply correct behaviors
- * Licensed under the GNU GPL v2 license.
  */
+
+function add_style(css) {
+    var head, style;
+    head = document.getElementsByTagName('head')[0];
+    if (!head) { return; }
+    style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = css;
+    head.appendChild(style);
+}
+
 (function ($, document) {
     var doms = 'h1, h2, h3, p ,a',
         inputs = 'textarea, input[type=text]';
-
-    $(document).ajaxComplete(function () {
-        $(doms).each(function () {
-            updateStyle($(this));
-        });
-        $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
-    });
-
     $(document).ready(function () {
-        $(doms).each(function () {
-            updateStyle($(this));
-        });
-        $('span.icon-sm.icon-edit.list-card-operation').css({right: "inherit", left:0});
+        add_style([
+            'div.list-header {padding: 8px 10px 8px 34px; }',
+            'h2.list-header-name {font-family: "B Yekan", Tahoma!important; font-size: 14px; float: right; direction: rtl; }',
+            'a.list-header-menu-icon {left: 0; right: inherit;}',
+            'a.list-card-title {font-family: Tahoma!important; font-size: 13px!important; direction: rtl;}',
+            'span.icon-sm.icon-edit.list-card-operation {right: inherit; left: 0;}',
+            '.list-card-labels .card-label {float: right!important;}',
+            '.badges {float:right!important;}',
+            '.list-card-members {float:left!important;}',
+            'textarea, input[type=text] {font-family: Tahoma!important; direction: rtl;}',
+            '.card-detail-item div {font-family:Tahoma!important; font-size:13px!important; direction:rtl;}',
+            '.action-comment .current-comment {font-family:Tahoma!important; font-size: 13px!important; direction: rtl;}',
+            '.checklist {font-family: Tahoma!important; font-size:13px!important;}',
+            '.checklist-item-checkbox {left:inherit; right: 5px; }',
+            '.checklist-item {padding: 0 38px 4px 0; direction:rtl;}'
+        ].join('\n'));
     });
-
-    $('body').on('input blur focus', inputs, function (e) {
-        updateStyle($(this));
-    });
-
-    function updateStyle(target) {
-        var regex = [],
-            matched,
-            value,
-            tagName = target[0].tagName,
-            rtl,
-            ltr;
-
-        rtl = {
-            'direction': 'rtl',
-            'text-align': 'right',
-            'font-family': 'tahoma'
-        };
-        ltr = {
-            'direction': 'ltr',
-            'text-align': 'left'
-        };
-
-        value = target.text();
-
-        if (target.is('textarea') || target.is('input[type=text]')) {
-            value = target.val();
-        }
-
-        if (target.is('a') || tagName === 'H1' || tagName === 'H2' || tagName === 'H3') {
-            rtl['unicode-bidi'] = 'embed';
-            ltr['unicode-bidi'] = '';
-        }
-
-        // Persian, Arabic
-        regex.push(/[\u0600-\u06FF]/);
-        // Hebrew
-        regex.push(/[\u0590-\u05FF]/);
-
-        for (var i = 0; i < regex.length; i++) {
-            matched = value.match(regex[i]);
-
-            if (matched) {
-                break;
-            }
-        }
-
-        if (matched) {
-            target.css(rtl);
-        } else {
-            target.css(ltr);
-        }
-    }
 })($, document);
