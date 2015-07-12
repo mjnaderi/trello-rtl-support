@@ -30,7 +30,10 @@ function add_style(css) {
             '.action-comment .current-comment {font-family:Tahoma!important; font-size: 13px!important; direction: rtl;}',
             '.checklist {font-family: Tahoma!important; font-size:13px!important;}',
             '.checklist-item-checkbox {left:inherit; right: 5px; }',
-            '.checklist-item {padding: 0 38px 4px 0; direction:rtl;}'
+            '.checklist-item {padding: 0 38px 4px 0; direction:rtl;}',
+            '.board-header-btn-text, .window-title-text {font-family: "B Yekan", Tahoma!important;}',
+            '.window-header {direction: rtl;}',
+            '.window-header-icon {display: none;}'
         ].join('\n'));
     });
 })($, document);
